@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.frameTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // frameTimer
+            // 
+            this.frameTimer.Interval = 50;
+            this.frameTimer.Tick += new System.EventHandler(this.frameTimer_Tick);
             // 
             // LoadingAnimation
             // 
@@ -40,6 +47,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer frameTimer;
 
     }
 }
