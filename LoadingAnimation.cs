@@ -39,6 +39,8 @@ namespace LH.Controls
         /// <summary>
         /// If true, the animation is running. If false, the animation is paused.
         /// </summary>
+        [Description("If true, the animation is running. If false, the animation is paused.")]
+        [DefaultValue(true)]
         public bool Active
         {
             get { return frameTimer.Enabled; }
@@ -48,6 +50,8 @@ namespace LH.Controls
         /// <summary>
         /// Index of the displayed frame.
         /// </summary>
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int CurrentFrame
         {
             get { return currentFrame; }
@@ -61,6 +65,8 @@ namespace LH.Controls
         /// <summary>
         /// Time interval between frames.
         /// </summary>
+        [Description("Time interval between frames.")]
+        [DefaultValue(50)]
         public int FrameInterval
         {
             get { return frameTimer.Interval; }
@@ -83,8 +89,6 @@ namespace LH.Controls
                 throw new Exception("The required LoadingAnimationStrip resource is missing or invalid.");
 
             framesCount = animationStrip.Width / FrameSize;
-
-            Active = !DesignMode;
         }
 
         /// <summary>

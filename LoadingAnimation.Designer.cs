@@ -35,6 +35,7 @@
             // frameTimer
             // 
             this.frameTimer.Interval = 50;
+            this.frameTimer.Enabled = true;
             this.frameTimer.Tick += new System.EventHandler(this.frameTimer_Tick);
             // 
             // LoadingAnimation
